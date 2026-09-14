@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: gray;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    border: 1px;
+    align-items: center;
+    gap: 24px;
+}
+
+.card {
+    background-color: #fff;
+    height: 300px;
+    width: 20vw;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.profile h1 {
+    font-size: 17px;
+}
+
+img {
+    width: 40%;
+    height: 40%;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    box-sizing: border-box;
+}
+
+section img {
+    border-radius: 0%;
+}
+
+button {
+    width: 40%;
+    height: 10%;
+    justify-content: space-evenly;
+}
+
+.button-follow {
+    background-color: rgb(74, 74, 194);
+    color: white;
+}
