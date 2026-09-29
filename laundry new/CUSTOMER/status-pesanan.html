@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LaundryKita - Status Pesanan</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="customer.html">
+                LaundryKita
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMenu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="customer.html">
+                            Beranda
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link active"
+                            href="status-pesanan.html">
+                            Pesanan
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="profil.html">
+                            Profil
+                        </a>
+                    </li>
+
+                    <li class="nav-item ms-lg-2">
+                        <a
+                            class="btn btn-outline-danger btn-sm mt-1"
+                            href="../index.html">
+                            Keluar
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- CONTENT -->
+    <section class="container py-5">
+
+        <!-- JUDUL -->
+        <div class="mb-4">
+
+            <h2 class="fw-bold">
+                Pesanan Saya
+            </h2>
+
+            <p class="text-muted">
+                Lihat status dan riwayat pesanan laundry kamu.
+            </p>
+
+        </div>
+
+
+        <!-- PESANAN AKTIF -->
+        <div class="card shadow-sm rounded-4 mb-4">
+
+            <div class="card-body p-4">
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+
+                    <div>
+                        <h5 class="fw-bold mb-1">
+                            Pesanan #LK001
+                        </h5>
+
+                        <small class="text-muted">
+                            25 September 2026
+                        </small>
+                    </div>
+
+                    <span class="badge bg-primary">
+                        Sedang Diproses
+                    </span>
+
+                </div>
+
+
+                <hr>
+
+
+                <div class="row">
+
+                    <div class="col-md-6">
+
+                        <p class="mb-2">
+                            <strong>Layanan:</strong>
+                            Cuci Setrika
+                        </p>
+
+                        <p class="mb-2">
+                            <strong>Berat:</strong>
+                            3 Kg
+                        </p>
+
+                    </div>
+
+
+                    <div class="col-md-6">
+
+                        <p class="mb-2">
+                            <strong>Total:</strong>
+                            Rp30.000
+                        </p>
+
+                        <p class="mb-2">
+                            <strong>Alamat:</strong>
+                            Jl. Contoh No. 10, Pekanbaru
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="btn btn-primary mt-3 btn-detail-aktif"
+                    data-bs-toggle="modal"
+                    data-bs-target="#detailPesanan"
+                    data-id="#LK001"
+                    data-nama="Salwa"
+                    data-layanan="Cuci Setrika"
+                    data-berat="3 Kg"
+                    data-total="Rp30.000"
+                    data-status="Sedang Diproses"
+                    data-alamat="Jl. Contoh No. 10, Pekanbaru">
+
+                    Lihat Detail
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIWAYAT PESANAN -->
+        <h4 class="fw-bold mb-3">
+            Riwayat Pesanan
+        </h4>
+
+
+        <div class="card shadow-sm rounded-4">
+
+            <div class="card-body p-0">
+
+                <div class="table-responsive">
+
+                    <table class="table table-hover mb-0">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    ID Pesanan
+                                </th>
+
+                                <th>
+                                    Layanan
+                                </th>
+
+                                <th>
+                                    Berat
+                                </th>
+
+                                <th>
+                                    Total
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Detail
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>
+                                    #LK002
+                                </td>
+
+                                <td>
+                                    Setrika Saja
+                                </td>
+
+                                <td>
+                                    2 Kg
+                                </td>
+
+                                <td>
+                                    Rp12.000
+                                </td>
+
+                                <td>
+
+                                    <span class="badge bg-success">
+                                        Selesai
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    <button
+                                        type="button"
+                                        class="btn btn-sm btn-primary btn-detail-riwayat"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#detailRiwayat"
+                                        data-id="#LK002"
+                                        data-layanan="Setrika Saja"
+                                        data-berat="2 Kg"
+                                        data-total="Rp12.000"
+                                        data-status="Selesai">
+
+                                        Detail
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    #LK003
+                                </td>
+
+                                <td>
+                                    Cuci Kering
+                                </td>
+
+                                <td>
+                                    3 Kg
+                                </td>
+
+                                <td>
+                                    Rp21.000
+                                </td>
+
+                                <td>
+
+                                    <span class="badge bg-success">
+                                        Selesai
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    <button
+                                        type="button"
+                                        class="btn btn-sm btn-primary btn-detail-riwayat"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#detailRiwayat"
+                                        data-id="#LK003"
+                                        data-layanan="Cuci Kering"
+                                        data-berat="3 Kg"
+                                        data-total="Rp21.000"
+                                        data-status="Selesai">
+
+                                        Detail
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MODAL PESANAN AKTIF -->
+    <div
+        class="modal fade"
+        id="detailPesanan"
+        tabindex="-1">
+
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title fw-bold" id="detailPesananAktifTitle">
+                        Detail Pesanan
+                    </h5>
+
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal">
+                    </button>
+
+                </div>
+
+
+                <div class="modal-body">
+
+                    <p>
+                        <strong>Nama:</strong>
+                        <span id="aktifModalNama"></span>
+                    </p>
+
+                    <p>
+                        <strong>Layanan:</strong>
+                        <span id="aktifModalLayanan"></span>
+                    </p>
+
+                    <p>
+                        <strong>Berat:</strong>
+                        <span id="aktifModalBerat"></span>
+                    </p>
+
+                    <p>
+                        <strong>Total:</strong>
+                        <span id="aktifModalTotal"></span>
+                    </p>
+
+                    <p>
+                        <strong>Status:</strong>
+                        <span id="aktifModalStatus"></span>
+                    </p>
+
+                    <p>
+                        <strong>Alamat:</strong>
+                        <span id="aktifModalAlamat"></span>
+                    </p>
+
+                </div>
+
+
+                <div class="modal-footer">
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+
+                        Tutup
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MODAL RIWAYAT -->
+    <div
+        class="modal fade"
+        id="detailRiwayat"
+        tabindex="-1">
+
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title fw-bold" id="detailRiwayatTitle">
+                        Detail Riwayat Pesanan
+                    </h5>
+
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal">
+                    </button>
+
+                </div>
+
+
+                <div class="modal-body">
+
+                    <p>
+                        <strong>Layanan:</strong>
+                        <span id="riwayatModalLayanan"></span>
+                    </p>
+
+                    <p>
+                        <strong>Berat:</strong>
+                        <span id="riwayatModalBerat"></span>
+                    </p>
+
+                    <p>
+                        <strong>Total:</strong>
+                        <span id="riwayatModalTotal"></span>
+                    </p>
+
+                    <p>
+                        <strong>Status:</strong>
+                        <span id="riwayatModalStatus"></span>
+                    </p>
+
+                </div>
+
+
+                <div class="modal-footer">
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+
+                        Tutup
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="text-center py-4 bg-white">
+
+        <p class="mb-0 text-muted">
+
+            © 2026 LaundryKita —
+            Sistem Pemesanan Laundry
+
+        </p>
+
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <script>
+        const detailPesananModal = document.getElementById("detailPesanan");
+        const detailRiwayatModal = document.getElementById("detailRiwayat");
+
+        detailPesananModal.addEventListener("show.bs.modal", function (event) {
+            const button = event.relatedTarget;
+            if (!button) return;
+
+            document.getElementById("detailPesananAktifTitle").textContent =
+                "Detail Pesanan " + button.dataset.id;
+            document.getElementById("aktifModalNama").textContent =
+                button.dataset.nama;
+            document.getElementById("aktifModalLayanan").textContent =
+                button.dataset.layanan;
+            document.getElementById("aktifModalBerat").textContent =
+                button.dataset.berat;
+            document.getElementById("aktifModalTotal").textContent =
+                button.dataset.total;
+            document.getElementById("aktifModalStatus").textContent =
+                button.dataset.status;
+            document.getElementById("aktifModalAlamat").textContent =
+                button.dataset.alamat;
+        });
+
+        detailRiwayatModal.addEventListener("show.bs.modal", function (event) {
+            const button = event.relatedTarget;
+            if (!button) return;
+
+            document.getElementById("detailRiwayatTitle").textContent =
+                "Detail Riwayat Pesanan " + button.dataset.id;
+            document.getElementById("riwayatModalLayanan").textContent =
+                button.dataset.layanan;
+            document.getElementById("riwayatModalBerat").textContent =
+                button.dataset.berat;
+            document.getElementById("riwayatModalTotal").textContent =
+                button.dataset.total;
+            document.getElementById("riwayatModalStatus").textContent =
+                button.dataset.status;
+        });
+    </script>
+
+</body>
+
+</html>

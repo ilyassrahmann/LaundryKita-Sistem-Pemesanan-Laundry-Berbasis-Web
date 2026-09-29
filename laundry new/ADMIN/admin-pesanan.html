@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LaundryKita - Kelola Pesanan</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="admin.html">
+                LaundryKita
+            </a>
+
+            <span class="badge badge-yellow ms-2">
+                Admin
+            </span>
+
+            <button
+                class="navbar-toggler ms-auto"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div
+                class="collapse navbar-collapse"
+                id="navbarMenu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="admin.html">
+
+                            Dashboard
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link active"
+                            href="admin-pesanan.html">
+
+                            Pesanan
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="admin-pelanggan.html">
+
+                            Pelanggan
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item ms-lg-2">
+
+                        <a
+                            class="btn btn-outline-danger btn-sm mt-1"
+                            href="../index.html">
+
+                            Keluar
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- CONTENT -->
+    <section class="container py-5">
+
+        <div class="mb-4">
+
+            <h2 class="fw-bold">
+                Kelola Pesanan
+            </h2>
+
+            <p class="text-muted">
+                Lihat dan kelola seluruh pesanan pelanggan.
+            </p>
+
+        </div>
+
+
+        <!-- FILTER -->
+        <div class="card shadow-sm rounded-4 mb-4">
+
+            <div class="card-body">
+
+                <div class="row g-3">
+
+                    <div class="col-md-7">
+
+                        <label class="form-label fw-semibold" for="cariPesanan">
+                            Cari Pesanan
+                        </label>
+
+                        <input
+                            type="text"
+                            id="cariPesanan"
+                            class="form-control"
+                            placeholder="Cari ID atau nama pelanggan">
+
+                    </div>
+
+
+                    <div class="col-md-5">
+
+                        <label class="form-label fw-semibold" for="filterStatus">
+                            Filter Status
+                        </label>
+
+                        <select id="filterStatus" class="form-select">
+
+                            <option selected>
+                                Semua Status
+                            </option>
+
+                            <option>
+                                Menunggu
+                            </option>
+
+                            <option>
+                                Diproses
+                            </option>
+
+                            <option>
+                                Dicuci
+                            </option>
+
+                            <option>
+                                Disetrika
+                            </option>
+
+                            <option>
+                                Selesai
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- TABEL PESANAN -->
+        <div class="card shadow-sm rounded-4">
+
+            <div class="card-body p-0">
+
+                <div class="table-responsive">
+
+                    <table class="table table-hover align-middle mb-0">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    ID
+                                </th>
+
+                                <th>
+                                    Pelanggan
+                                </th>
+
+                                <th>
+                                    Layanan
+                                </th>
+
+                                <th>
+                                    Berat
+                                </th>
+
+                                <th>
+                                    Total
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Aksi
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <!-- PESANAN 1 -->
+                            <tr>
+
+                                <td>
+                                    #LK001
+                                </td>
+
+                                <td>
+                                    Salwa
+                                </td>
+
+                                <td>
+                                    Cuci Setrika
+                                </td>
+
+                                <td>
+                                    3 Kg
+                                </td>
+
+                                <td>
+                                    Rp30.000
+                                </td>
+
+                                <td>
+
+                                    <span class="badge bg-primary">
+                                        Diproses
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    <button
+                                        type="button"
+                                        class="btn btn-sm btn-primary btn-detail-pesanan"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#detailPesanan"
+                                        data-id="#LK001"
+                                        data-nama="Salwa"
+                                        data-layanan="Cuci Setrika"
+                                        data-berat="3 Kg"
+                                        data-total="Rp30.000"
+                                        data-status="Diproses"
+                                        data-alamat="Jl. Contoh No. 10, Pekanbaru">
+
+                                        Detail
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <!-- PESANAN 2 -->
+                            <tr>
+
+                                <td>
+                                    #LK002
+                                </td>
+
+                                <td>
+                                    Aulia
+                                </td>
+
+                                <td>
+                                    Cuci Kering
+                                </td>
+
+                                <td>
+                                    3 Kg
+                                </td>
+
+                                <td>
+                                    Rp21.000
+                                </td>
+
+                                <td>
+
+                                    <span class="badge bg-warning text-dark">
+                                        Dicuci
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    <button
+                                        type="button"
+                                        class="btn btn-sm btn-primary btn-detail-pesanan"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#detailPesanan"
+                                        data-id="#LK002"
+                                        data-nama="Aulia"
+                                        data-layanan="Cuci Kering"
+                                        data-berat="3 Kg"
+                                        data-total="Rp21.000"
+                                        data-status="Dicuci"
+                                        data-alamat="Jl. Merdeka No. 5, Pekanbaru">
+
+                                        Detail
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <!-- PESANAN 3 -->
+                            <tr>
+
+                                <td>
+                                    #LK003
+                                </td>
+
+                                <td>
+                                    Rina
+                                </td>
+
+                                <td>
+                                    Setrika Saja
+                                </td>
+
+                                <td>
+                                    2 Kg
+                                </td>
+
+                                <td>
+                                    Rp12.000
+                                </td>
+
+                                <td>
+
+                                    <span class="badge bg-success">
+                                        Selesai
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    <button
+                                        type="button"
+                                        class="btn btn-sm btn-primary btn-detail-pesanan"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#detailPesanan"
+                                        data-id="#LK003"
+                                        data-nama="Rina"
+                                        data-layanan="Setrika Saja"
+                                        data-berat="2 Kg"
+                                        data-total="Rp12.000"
+                                        data-status="Selesai"
+                                        data-alamat="Jl. Sudirman No. 12, Pekanbaru">
+
+                                        Detail
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <!-- PESANAN 4 -->
+                            <tr>
+
+                                <td>
+                                    #LK004
+                                </td>
+
+                                <td>
+                                    Dinda
+                                </td>
+
+                                <td>
+                                    Cuci Setrika
+                                </td>
+
+                                <td>
+                                    4 Kg
+                                </td>
+
+                                <td>
+                                    Rp40.000
+                                </td>
+
+                                <td>
+
+                                    <span class="badge bg-secondary">
+                                        Menunggu
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    <button
+                                        type="button"
+                                        class="btn btn-sm btn-primary btn-detail-pesanan"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#detailPesanan"
+                                        data-id="#LK004"
+                                        data-nama="Dinda"
+                                        data-layanan="Cuci Setrika"
+                                        data-berat="4 Kg"
+                                        data-total="Rp40.000"
+                                        data-status="Menunggu"
+                                        data-alamat="Jl. Ahmad Yani No. 8, Pekanbaru">
+
+                                        Detail
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MODAL DETAIL PESANAN -->
+    <div
+        class="modal fade"
+        id="detailPesanan"
+        tabindex="-1">
+
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title fw-bold" id="detailPesananTitle">
+                        Detail Pesanan
+                    </h5>
+
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal">
+                    </button>
+
+                </div>
+
+
+                <div class="modal-body">
+
+                    <p>
+                        <strong>Nama Pelanggan:</strong>
+                        <span id="modalNamaPelanggan"></span>
+                    </p>
+
+                    <p>
+                        <strong>Layanan:</strong>
+                        <span id="modalLayanan"></span>
+                    </p>
+
+                    <p>
+                        <strong>Berat:</strong>
+                        <span id="modalBerat"></span>
+                    </p>
+
+                    <p>
+                        <strong>Total:</strong>
+                        <span id="modalTotal"></span>
+                    </p>
+
+                    <p>
+                        <strong>Alamat:</strong>
+                        <span id="modalAlamat"></span>
+                    </p>
+
+
+                    <div class="mb-3">
+
+                        <label class="form-label fw-semibold" for="ubahStatusSelect">
+                            Ubah Status
+                        </label>
+
+                        <select id="ubahStatusSelect" class="form-select">
+
+                            <option value="Menunggu">
+                                Menunggu
+                            </option>
+
+                            <option value="Diproses">
+                                Diproses
+                            </option>
+
+                            <option value="Dicuci">
+                                Dicuci
+                            </option>
+
+                            <option value="Disetrika">
+                                Disetrika
+                            </option>
+
+                            <option value="Selesai">
+                                Selesai
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="modal-footer">
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+
+                        Tutup
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        id="simpanStatusBtn">
+
+                        Simpan Status
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="text-center py-4 bg-white">
+
+        <p class="mb-0 text-muted">
+
+            © 2026 LaundryKita —
+            Sistem Pemesanan Laundry
+
+        </p>
+
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <script>
+        const detailPesananModal = document.getElementById("detailPesanan");
+        const ubahStatusSelect = document.getElementById("ubahStatusSelect");
+        const simpanStatusBtn = document.getElementById("simpanStatusBtn");
+        let activeOrderRow = null;
+
+        const statusBadgeClass = {
+            Menunggu: "badge bg-secondary",
+            Diproses: "badge bg-primary",
+            Dicuci: "badge bg-warning text-dark",
+            Disetrika: "badge bg-warning text-dark",
+            Selesai: "badge bg-success"
+        };
+
+        detailPesananModal.addEventListener("show.bs.modal", function (event) {
+            const button = event.relatedTarget;
+            if (!button) return;
+
+            activeOrderRow = button.closest("tr");
+
+            document.getElementById("detailPesananTitle").textContent =
+                "Detail Pesanan " + button.dataset.id;
+            document.getElementById("modalNamaPelanggan").textContent =
+                button.dataset.nama;
+            document.getElementById("modalLayanan").textContent =
+                button.dataset.layanan;
+            document.getElementById("modalBerat").textContent =
+                button.dataset.berat;
+            document.getElementById("modalTotal").textContent =
+                button.dataset.total;
+            document.getElementById("modalAlamat").textContent =
+                button.dataset.alamat;
+
+            ubahStatusSelect.value = button.dataset.status;
+        });
+
+        simpanStatusBtn.addEventListener("click", function () {
+            const newStatus = ubahStatusSelect.value;
+            if (!activeOrderRow) return;
+
+            const badge = activeOrderRow.querySelector(".badge");
+            badge.textContent = newStatus;
+            badge.className = statusBadgeClass[newStatus] || "badge bg-secondary";
+
+            const detailBtn = activeOrderRow.querySelector(".btn-detail-pesanan");
+            if (detailBtn) {
+                detailBtn.dataset.status = newStatus;
+            }
+
+            bootstrap.Modal.getInstance(detailPesananModal).hide();
+            applyPesananFilters();
+        });
+
+        const cariPesanan = document.getElementById("cariPesanan");
+        const filterStatus = document.getElementById("filterStatus");
+        const pesananRows = document.querySelectorAll("table tbody tr");
+
+        function applyPesananFilters() {
+            const query = cariPesanan.value.trim().toLowerCase();
+            const statusFilter = filterStatus.options[filterStatus.selectedIndex].text.trim();
+
+            pesananRows.forEach(function (row) {
+                const id = row.cells[0].textContent.trim().toLowerCase();
+                const nama = row.cells[1].textContent.trim().toLowerCase();
+                const status = row.querySelector(".badge").textContent.trim();
+
+                const matchesSearch =
+                    !query || id.includes(query) || nama.includes(query);
+                const matchesStatus =
+                    statusFilter === "Semua Status" || status === statusFilter;
+
+                row.classList.toggle("d-none", !(matchesSearch && matchesStatus));
+            });
+        }
+
+        cariPesanan.addEventListener("input", applyPesananFilters);
+        filterStatus.addEventListener("change", applyPesananFilters);
+    </script>
+
+</body>
+
+</html>

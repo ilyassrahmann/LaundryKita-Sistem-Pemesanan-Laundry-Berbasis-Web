@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LaundryKita - Data Pelanggan</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="admin.html">
+                LaundryKita
+            </a>
+
+            <span class="badge badge-yellow ms-2">
+                Admin
+            </span>
+
+            <button
+                class="navbar-toggler ms-auto"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <div
+                class="collapse navbar-collapse"
+                id="navbarMenu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="admin.html">
+
+                            Dashboard
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="admin-pesanan.html">
+
+                            Pesanan
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link active"
+                            href="admin-pelanggan.html">
+
+                            Pelanggan
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item ms-lg-2">
+
+                        <a
+                            class="btn btn-outline-danger btn-sm mt-1"
+                            href="../index.html">
+
+                            Keluar
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- CONTENT -->
+    <section class="container py-5">
+
+        <div class="mb-4">
+
+            <h2 class="fw-bold">
+                Data Pelanggan
+            </h2>
+
+            <p class="text-muted">
+                Lihat data pelanggan yang terdaftar di LaundryKita.
+            </p>
+
+        </div>
+
+
+        <!-- PENCARIAN -->
+        <div class="card shadow-sm rounded-4 mb-4">
+
+            <div class="card-body">
+
+                <label class="form-label fw-semibold" for="cariPelanggan">
+                    Cari Pelanggan
+                </label>
+
+                <input
+                    type="text"
+                    id="cariPelanggan"
+                    class="form-control"
+                    placeholder="Cari berdasarkan nama atau email">
+
+            </div>
+
+        </div>
+
+
+        <!-- TABEL PELANGGAN -->
+        <div class="card shadow-sm rounded-4">
+
+            <div class="card-body p-0">
+
+                <div class="table-responsive">
+
+                    <table class="table table-hover align-middle mb-0">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Nama
+                                </th>
+
+                                <th>
+                                    Email
+                                </th>
+
+                                <th>
+                                    No. HP
+                                </th>
+
+                                <th>
+                                    Pesanan
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Aksi
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <!-- SALWA -->
+                            <tr>
+
+                                <td>
+                                    Salwa
+                                </td>
+
+                                <td>
+                                    salwa@email.com
+                                </td>
+
+                                <td>
+                                    081234567890
+                                </td>
+
+                                <td>
+                                    5 Pesanan
+                                </td>
+
+                                <td>
+
+                                    <span class="badge bg-success">
+                                        Aktif
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    <button
+                                        type="button"
+                                        class="btn btn-sm btn-primary btn-detail-pelanggan"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#detailPelanggan"
+                                        data-nama="Salwa"
+                                        data-email="salwa@email.com"
+                                        data-hp="081234567890"
+                                        data-pesanan="5 Pesanan"
+                                        data-status="Aktif"
+                                        data-alamat="Jl. Contoh No. 10, Pekanbaru">
+
+                                        Detail
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <!-- AULIA -->
+                            <tr>
+
+                                <td>
+                                    Aulia
+                                </td>
+
+                                <td>
+                                    aulia@email.com
+                                </td>
+
+                                <td>
+                                    082345678901
+                                </td>
+
+                                <td>
+                                    3 Pesanan
+                                </td>
+
+                                <td>
+
+                                    <span class="badge bg-success">
+                                        Aktif
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    <button
+                                        type="button"
+                                        class="btn btn-sm btn-primary btn-detail-pelanggan"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#detailPelanggan"
+                                        data-nama="Aulia"
+                                        data-email="aulia@email.com"
+                                        data-hp="082345678901"
+                                        data-pesanan="3 Pesanan"
+                                        data-status="Aktif"
+                                        data-alamat="Jl. Merdeka No. 5, Pekanbaru">
+
+                                        Detail
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <!-- RINA -->
+                            <tr>
+
+                                <td>
+                                    Rina
+                                </td>
+
+                                <td>
+                                    rina@email.com
+                                </td>
+
+                                <td>
+                                    083456789012
+                                </td>
+
+                                <td>
+                                    7 Pesanan
+                                </td>
+
+                                <td>
+
+                                    <span class="badge bg-success">
+                                        Aktif
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    <button
+                                        type="button"
+                                        class="btn btn-sm btn-primary btn-detail-pelanggan"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#detailPelanggan"
+                                        data-nama="Rina"
+                                        data-email="rina@email.com"
+                                        data-hp="083456789012"
+                                        data-pesanan="7 Pesanan"
+                                        data-status="Aktif"
+                                        data-alamat="Jl. Sudirman No. 12, Pekanbaru">
+
+                                        Detail
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <!-- DINDA -->
+                            <tr>
+
+                                <td>
+                                    Dinda
+                                </td>
+
+                                <td>
+                                    dinda@email.com
+                                </td>
+
+                                <td>
+                                    084567890123
+                                </td>
+
+                                <td>
+                                    2 Pesanan
+                                </td>
+
+                                <td>
+
+                                    <span class="badge bg-secondary">
+                                        Tidak Aktif
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    <button
+                                        type="button"
+                                        class="btn btn-sm btn-primary btn-detail-pelanggan"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#detailPelanggan"
+                                        data-nama="Dinda"
+                                        data-email="dinda@email.com"
+                                        data-hp="084567890123"
+                                        data-pesanan="2 Pesanan"
+                                        data-status="Tidak Aktif"
+                                        data-alamat="Jl. Ahmad Yani No. 8, Pekanbaru">
+
+                                        Detail
+
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MODAL DETAIL PELANGGAN -->
+    <div
+        class="modal fade"
+        id="detailPelanggan"
+        tabindex="-1">
+
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title fw-bold">
+                        Detail Pelanggan
+                    </h5>
+
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal">
+                    </button>
+
+                </div>
+
+
+                <div class="modal-body">
+
+                    <p>
+                        <strong>Nama:</strong>
+                        <span id="modalPelangganNama"></span>
+                    </p>
+
+                    <p>
+                        <strong>Email:</strong>
+                        <span id="modalPelangganEmail"></span>
+                    </p>
+
+                    <p>
+                        <strong>No. HP:</strong>
+                        <span id="modalPelangganHp"></span>
+                    </p>
+
+                    <p>
+                        <strong>Jumlah Pesanan:</strong>
+                        <span id="modalPelangganPesanan"></span>
+                    </p>
+
+                    <p>
+                        <strong>Status:</strong>
+                        <span id="modalPelangganStatus"></span>
+                    </p>
+
+                    <p>
+                        <strong>Alamat:</strong>
+                        <span id="modalPelangganAlamat"></span>
+                    </p>
+
+                </div>
+
+
+                <div class="modal-footer">
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+
+                        Tutup
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="text-center py-4 bg-white">
+
+        <p class="mb-0 text-muted">
+
+            © 2026 LaundryKita —
+            Sistem Pemesanan Laundry
+
+        </p>
+
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <script>
+        const detailPelangganModal = document.getElementById("detailPelanggan");
+
+        detailPelangganModal.addEventListener("show.bs.modal", function (event) {
+            const button = event.relatedTarget;
+            if (!button) return;
+
+            document.getElementById("modalPelangganNama").textContent =
+                button.dataset.nama;
+            document.getElementById("modalPelangganEmail").textContent =
+                button.dataset.email;
+            document.getElementById("modalPelangganHp").textContent =
+                button.dataset.hp;
+            document.getElementById("modalPelangganPesanan").textContent =
+                button.dataset.pesanan;
+            document.getElementById("modalPelangganStatus").textContent =
+                button.dataset.status;
+            document.getElementById("modalPelangganAlamat").textContent =
+                button.dataset.alamat;
+        });
+
+        const cariPelanggan = document.getElementById("cariPelanggan");
+        const pelangganRows = document.querySelectorAll("table tbody tr");
+
+        cariPelanggan.addEventListener("input", function () {
+            const query = cariPelanggan.value.trim().toLowerCase();
+
+            pelangganRows.forEach(function (row) {
+                const nama = row.cells[0].textContent.trim().toLowerCase();
+                const email = row.cells[1].textContent.trim().toLowerCase();
+                const matches =
+                    !query || nama.includes(query) || email.includes(query);
+                row.classList.toggle("d-none", !matches);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - LaundryKita</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row justify-content-center align-items-center min-vh-100">
+
+            <div class="col-md-5">
+
+                <div class="card border-0 shadow-lg rounded-4">
+
+                    <div class="card-body p-5">
+
+                        <!-- LOGO -->
+                        <div class="text-center mb-4">
+
+                            <div class="display-3" aria-label="Keranjang laundry">
+                                🧺
+                            </div>
+
+                            <h2 class="fw-bold mt-2">
+                                LaundryKita
+                            </h2>
+
+                            <p class="text-muted">
+                                Sistem Pemesanan Laundry
+                            </p>
+
+                        </div>
+
+
+                        <!-- FORM LOGIN -->
+                        <form onsubmit="login(event)">
+
+                            <div class="mb-3">
+
+                                <label class="form-label fw-semibold" for="email">
+                                    Email
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    class="form-control"
+                                    placeholder="Masukkan email"
+                                    required>
+
+                            </div>
+
+
+                            <div class="mb-3">
+
+                                <label class="form-label fw-semibold" for="password">
+                                    Password
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="password"
+                                    class="form-control"
+                                    placeholder="Masukkan password"
+                                    required>
+
+                            </div>
+
+
+                            <div
+                                id="errorMessage"
+                                class="alert alert-danger d-none">
+                            </div>
+
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary w-100 rounded-3 py-2">
+
+                                Login
+
+                            </button>
+
+                        </form>
+
+
+                        <!-- INFO AKUN DEMO -->
+                        <div class="mt-4 p-3 rounded-3"
+                            style="background-color: #fff8df;">
+
+                            <p class="fw-bold mb-2">
+                                🔑 Akun Demo
+                            </p>
+
+                            <small class="d-block">
+                                <strong>Admin:</strong>
+                                admin@laundrykita.com
+                            </small>
+
+                            <small class="d-block">
+                                Password:
+                                admin123
+                            </small>
+
+                            <hr>
+
+                            <small class="d-block">
+                                <strong>Customer:</strong>
+                                Gunakan email apa saja
+                            </small>
+
+                            <small class="d-block">
+                                Password:
+                                bebas
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- LOGIN JAVASCRIPT -->
+    <script>
+
+        function login(event) {
+
+            event.preventDefault();
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            const errorMessage =
+                document.getElementById("errorMessage");
+
+
+            // LOGIN ADMIN
+            if (
+                email === "admin@laundrykita.com" &&
+                password === "admin123"
+            ) {
+
+                window.location.href = "ADMIN/admin.html";
+
+            }
+
+            // LOGIN CUSTOMER
+            else if (
+                email !== "" &&
+                password !== ""
+            ) {
+
+                window.location.href = "CUSTOMER/customer.html";
+
+            }
+
+            // LOGIN GAGAL
+            else {
+
+                errorMessage.textContent =
+                    "Email atau password tidak valid.";
+
+                errorMessage.classList.remove("d-none");
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
