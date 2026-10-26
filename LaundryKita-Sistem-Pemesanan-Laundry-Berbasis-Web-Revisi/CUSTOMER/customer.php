@@ -1,3 +1,18 @@
+<?php
+// customer.php - halaman customer, daftar layanan diambil dari database
+require_once 'koneksi.php';
+
+// Ambil semua layanan, urut berdasarkan id
+$sql    = 'SELECT * FROM layanan ORDER BY id_layanan ASC';
+$result = mysqli_query($koneksi, $sql);
+
+// Gambar tiap layanan (cocokkan dengan nama_layanan, huruf kecil)
+$gambar = [
+    'cuci kering'  => 'kering.png',
+    'cuci setrika' => 'setrika.png',
+    'setrika saja' => 'setrika saja.png',
+];
+?>
 <!DOCTYPE html>
 <html lang="id">
 
@@ -24,7 +39,7 @@
         <div class="container">
 
             <!-- LOGO -->
-            <a class="navbar-brand fw-bold" href="customer.html">
+            <a class="navbar-brand fw-bold" href="customer.php">
                 LaundryKita
             </a>
 
@@ -54,7 +69,7 @@
 
                         <a
                             class="nav-link active"
-                            href="customer.html"
+                            href="customer.php"
                             aria-current="page">
 
                             Beranda
@@ -296,24 +311,36 @@
 
         <div class="row g-4">
 
+<?php if ($result && mysqli_num_rows($result) > 0) : ?>
+<?php while ($row = mysqli_fetch_assoc($result)) : ?>
+<?php
+    $kunci = strtolower($row['nama_layanan']);
+    $img   = $gambar[$kunci] ?? null;
+?>
+
             <div class="col-md-4">
 
                 <div class="card h-100 shadow-sm rounded-4 overflow-hidden">
 
-                    <img class="card-img-top svc-img" src="kering.png" alt="Cuci Kering">
+                    <?php if ($img) : ?>
+                    <img class="card-img-top svc-img" src="<?= rawurlencode($img) ?>" alt="<?= htmlspecialchars($row['nama_layanan']) ?>">
+                    <?php endif; ?>
 
                     <div class="card-body">
 
                         <h5 class="fw-bold">
-                            👕 Cuci Kering
+                            <?= htmlspecialchars($row['nama_layanan']) ?>
+                            <span class="badge bg-light text-secondary border fw-normal fs-6">
+                                <?= htmlspecialchars($row['kategori']) ?>
+                            </span>
                         </h5>
 
                         <p class="text-muted">
-                            Pakaian dicuci dan dikeringkan.
+                            <?= htmlspecialchars($row['deskripsi']) ?>
                         </p>
 
                         <p class="fw-bold fs-5 mb-0">
-                            Rp7.000 / kg
+                            Rp<?= number_format($row['harga'], 0, ',', '.') ?> / kg
                         </p>
 
                     </div>
@@ -322,59 +349,14 @@
 
             </div>
 
+<?php endwhile; ?>
+<?php else : ?>
 
-            <div class="col-md-4">
-
-                <div class="card h-100 shadow-sm rounded-4 overflow-hidden">
-
-                    <img class="card-img-top svc-img" src="setrika.png" alt="Cuci Setrika">
-
-                    <div class="card-body">
-
-                        <h5 class="fw-bold">
-                            👚 Cuci Setrika
-                        </h5>
-
-                        <p class="text-muted">
-                            Pakaian dicuci, dikeringkan, dan disetrika.
-                        </p>
-
-                        <p class="fw-bold fs-5 mb-0">
-                            Rp10.000 / kg
-                        </p>
-
-                    </div>
-
-                </div>
-
+            <div class="col-12 text-center text-muted">
+                Belum ada layanan yang tersedia.
             </div>
 
-
-            <div class="col-md-4">
-
-                <div class="card h-100 shadow-sm rounded-4 overflow-hidden">
-
-                    <img class="card-img-top svc-img" src="setrika saja.png" alt="Setrika Saja">
-
-                    <div class="card-body">
-
-                        <h5 class="fw-bold">
-                            ✨ Setrika Saja
-                        </h5>
-
-                        <p class="text-muted">
-                            Khusus untuk pakaian yang sudah dicuci.
-                        </p>
-
-                        <p class="fw-bold fs-5 mb-0">
-                            Rp6.000 / kg
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
+<?php endif; ?>
 
         </div>
 
@@ -498,3 +480,5 @@
 </body>
 
 </html>
+
+<?php mysqli_close($koneksi); ?>
