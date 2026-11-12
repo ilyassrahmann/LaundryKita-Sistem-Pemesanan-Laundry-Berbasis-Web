@@ -1,0 +1,351 @@
+/* ================================
+   LAUNDRYKITA
+   SIMPLE BLUE & YELLOW
+================================ */
+
+body {
+    background-color: #f5f8fc;
+    color: #333;
+    min-height: 100vh;
+}
+
+
+/* ================================
+   NAVBAR
+================================ */
+
+.navbar {
+    background-color: #ffffff !important;
+    border-bottom: 2px solid #f0c928;
+}
+
+.navbar-brand {
+    color: #1557b0 !important;
+}
+
+.nav-link {
+    color: #444 !important;
+    font-weight: 500;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #1557b0 !important;
+}
+
+
+/* ================================
+   BUTTON
+================================ */
+
+.btn-primary {
+    background-color: #1557b0;
+    border-color: #1557b0;
+}
+
+.btn-primary:hover {
+    background-color: #10458e;
+    border-color: #10458e;
+}
+
+.btn-warning {
+    background-color: #f0c928;
+    border-color: #f0c928;
+    color: #222;
+}
+
+
+/* ================================
+   Image movess
+================================ */
+.img-border {
+  position: relative;
+  display: inline-block;
+  padding: 5px;               /* tebal border */
+  border-radius: 16px;
+  background: conic-gradient(from var(--angle), #1557b0, #ffc107, #0dcaf0, #1557b0);
+  animation: putar 4s linear infinite;
+}
+
+.img-border img {
+  display: block;
+  max-width: 340px;
+  border-radius: 12px;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes putar {
+  to { --angle: 360deg; }
+}
+
+
+/* ================================
+   Image move
+================================ */
+
+.img-glow {
+  max-width: 340px;
+  border: 4px solid #1557b0;
+  border-radius: 16px;
+  animation: denyut 2s ease-in-out infinite;
+}
+
+@keyframes denyut {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(21, 87, 176, 0.6); }
+  50%      { box-shadow: 0 0 0 14px rgba(21, 87, 176, 0); }
+}
+
+
+/* ================================
+   LAYANAN & STEPPER
+================================ */
+
+.svc-img {
+    height: 220px;
+    object-fit: cover;
+}
+
+.order-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.order-steps li {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.order-steps li::before {
+    content: attr(data-step);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    margin: 0 auto 6px;
+    border-radius: 50%;
+    background: #e5e9ef;
+    color: #555;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}
+
+.order-steps li::after {
+    content: "";
+    position: absolute;
+    top: 16px;
+    left: -50%;
+    width: 100%;
+    height: 3px;
+    background: #e5e9ef;
+}
+
+.order-steps li:first-child::after {
+    display: none;
+}
+
+.order-steps li.done::before {
+    content: "\2713";
+    background: #1557b0;
+    color: #fff;
+}
+
+.order-steps li.done::after,
+.order-steps li.current::after {
+    background: #1557b0;
+}
+
+.order-steps li.current {
+    color: #222;
+    font-weight: 700;
+}
+
+.order-steps li.current::before {
+    background: #f0c928;
+    color: #222;
+    box-shadow: 0 0 0 4px rgba(240, 201, 40, 0.35);
+}
+
+
+/* ================================
+   CARD
+================================ */
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e5e9ef;
+}
+
+.card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08) !important;
+}
+
+
+/* ================================
+   FORM
+================================ */
+
+.form-control,
+.form-select {
+    border: 1px solid #d5dce5;
+    border-radius: 8px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #1557b0;
+    box-shadow: 0 0 0 0.15rem rgba(21, 87, 176, 0.12);
+}
+
+
+/* ================================
+   TABLE
+================================ */
+
+.table thead {
+    background-color: #1557b0;
+    color: white;
+}
+
+.table tbody tr:hover {
+    background-color: #f5f8fc;
+}
+
+
+/* ================================
+   BADGE
+================================ */
+
+.badge-pink {
+    background-color: #1557b0;
+}
+
+.badge-yellow {
+    background-color: #f0c928;
+    color: #222;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    background-color: #ffffff !important;
+    border-top: 1px solid #e5e9ef;
+}
+
+
+/* ================================
+   PROFILE
+================================ */
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #e8f0fb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    font-size: 40px;
+}
+
+
+/* ================================
+   ADMIN
+================================ */
+
+.admin-header {
+    background-color: #1557b0;
+    color: white;
+    border-radius: 12px;
+}
+
+.stat-card {
+    border-left: 4px solid #1557b0 !important;
+}
+
+.stat-card.yellow {
+    border-left-color: #f0c928 !important;
+}
+
+
+/* ================================
+   LOGIN
+================================ */
+
+.login-page {
+    background-color: #f5f8fc;
+}
+
+.login-card {
+    border-top: 5px solid #1557b0 !important;
+}
+
+.login-logo {
+    width: 70px;
+    height: 70px;
+    margin: auto;
+    border-radius: 50%;
+    background-color: #e8f0fb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+}
+
+.login-title {
+    color: #1557b0;
+}
+
+.login-button {
+    background-color: #1557b0;
+    border-color: #1557b0;
+    color: white;
+}
+
+.login-button:hover {
+    background-color: #10458e;
+    border-color: #10458e;
+}
+
+.login-info {
+    background-color: #fff9db;
+    border-left: 4px solid #f0c928;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+
+    .table {
+        font-size: 14px;
+    }
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .img-border,
+    .img-glow {
+        animation: none;
+    }
+
+}

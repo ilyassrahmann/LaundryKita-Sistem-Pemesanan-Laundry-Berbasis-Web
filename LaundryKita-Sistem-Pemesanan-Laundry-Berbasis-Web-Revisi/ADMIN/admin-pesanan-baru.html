@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LaundryKita - Pesanan Baru</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="admin.html">
+                LaundryKita
+            </a>
+
+            <span class="badge badge-yellow ms-2">
+                Admin
+            </span>
+
+            <button
+                class="navbar-toggler ms-auto"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu"
+                aria-expanded="false"
+                aria-label="Buka menu navigasi">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div
+                class="collapse navbar-collapse"
+                id="navbarMenu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="admin.html">
+
+                            Dashboard
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="admin-pesanan.html">
+
+                            Pesanan
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link active"
+                            href="admin-pesanan-baru.html"
+                            aria-current="page">
+
+                            Pesanan Baru
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="admin-pelanggan.html">
+
+                            Pelanggan
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item ms-lg-2">
+
+                        <a
+                            class="btn btn-outline-danger btn-sm mt-1"
+                            href="../index.html">
+
+                            Keluar
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- FORM PESANAN BARU -->
+    <section class="container py-5">
+
+        <div class="text-center mb-5">
+
+            <h2 class="fw-bold">
+                Catat Pesanan Baru
+            </h2>
+
+            <p class="text-muted">
+                Isi data cucian yang diterima dari pelanggan.
+            </p>
+
+        </div>
+
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-7">
+
+                <div class="card shadow-sm rounded-4">
+
+                    <div class="card-body p-4 p-md-5">
+
+                        <form id="formPesananBaru" novalidate>
+
+                            <!-- NAMA PELANGGAN -->
+                            <div class="mb-3">
+
+                                <label class="form-label fw-semibold" for="namaPelanggan">
+                                    Nama Pelanggan
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="namaPelanggan"
+                                    class="form-control"
+                                    list="daftarPelanggan"
+                                    required>
+
+                                <datalist id="daftarPelanggan">
+                                    <option value="Salwa"></option>
+                                    <option value="Aulia"></option>
+                                    <option value="Rina"></option>
+                                    <option value="Dinda"></option>
+                                </datalist>
+
+                                <div class="invalid-feedback">
+                                    Nama pelanggan wajib diisi.
+                                </div>
+
+                            </div>
+
+
+                            <!-- NOMOR HP -->
+                            <div class="mb-3">
+
+                                <label class="form-label fw-semibold" for="nomorHp">
+                                    Nomor HP
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="nomorHp"
+                                    class="form-control"
+                                    inputmode="tel"
+                                    required>
+
+                                <div class="invalid-feedback">
+                                    Nomor HP wajib diisi.
+                                </div>
+
+                            </div>
+
+
+                            <!-- LAYANAN -->
+                            <div class="mb-3">
+
+                                <label class="form-label fw-semibold" for="pilihLayanan">
+                                    Layanan
+                                </label>
+
+                                <select id="pilihLayanan" class="form-select" required>
+
+                                    <option value="Cuci Kering" data-price="7000">
+                                        Cuci Kering - Rp7.000/kg
+                                    </option>
+
+                                    <option value="Cuci Setrika" data-price="10000">
+                                        Cuci Setrika - Rp10.000/kg
+                                    </option>
+
+                                    <option value="Setrika Saja" data-price="6000">
+                                        Setrika Saja - Rp6.000/kg
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- BERAT -->
+                            <div class="mb-3">
+
+                                <label class="form-label fw-semibold" for="beratLaundry">
+                                    Berat
+                                </label>
+
+                                <div class="input-group">
+
+                                    <input
+                                        type="number"
+                                        id="beratLaundry"
+                                        class="form-control"
+                                        min="0.1"
+                                        step="0.1"
+                                        required>
+
+                                    <span class="input-group-text">
+                                        Kg
+                                    </span>
+
+                                </div>
+
+                                <div class="invalid-feedback">
+                                    Berat harus lebih dari 0 kg.
+                                </div>
+
+                            </div>
+
+
+                            <!-- RINGKASAN TOTAL -->
+                            <div class="mb-3 bg-light rounded-3 p-3">
+
+                                <p class="mb-1">
+                                    <span class="text-muted">Layanan:</span>
+                                    <span id="summaryLayanan">Cuci Kering</span>
+                                </p>
+
+                                <p class="mb-1">
+                                    <span class="text-muted">Harga/kg:</span>
+                                    <span id="summaryHargaKg">Rp7.000</span>
+                                </p>
+
+                                <p class="mb-1">
+                                    <span class="text-muted">Berat:</span>
+                                    <span id="summaryBerat">0 Kg</span>
+                                </p>
+
+                                <p class="mb-0 fw-bold fs-5">
+                                    Total:
+                                    <span id="summaryTotal">Rp0</span>
+                                </p>
+
+                            </div>
+
+
+                            <!-- ALAMAT -->
+                            <div class="mb-3">
+
+                                <label class="form-label fw-semibold" for="alamatPesanan">
+                                    Alamat
+                                </label>
+
+                                <textarea
+                                    id="alamatPesanan"
+                                    class="form-control"
+                                    rows="3"
+                                    required></textarea>
+
+                                <div class="invalid-feedback">
+                                    Alamat wajib diisi.
+                                </div>
+
+                            </div>
+
+
+                            <!-- CATATAN -->
+                            <div class="mb-3">
+
+                                <label class="form-label fw-semibold" for="catatanPesanan">
+                                    Catatan
+                                </label>
+
+                                <textarea
+                                    id="catatanPesanan"
+                                    class="form-control"
+                                    rows="3"
+                                    placeholder="Tambahkan catatan jika diperlukan"></textarea>
+
+                            </div>
+
+
+                            <!-- ESTIMASI SELESAI -->
+                            <div class="mb-3">
+
+                                <label class="form-label fw-semibold" for="estimasiSelesai">
+                                    Estimasi Selesai
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="estimasiSelesai"
+                                    class="form-control">
+
+                            </div>
+
+
+                            <!-- STATUS AWAL -->
+                            <div class="mb-4">
+
+                                <label class="form-label fw-semibold" for="statusAwal">
+                                    Status Awal
+                                </label>
+
+                                <select id="statusAwal" class="form-select">
+
+                                    <option value="Menunggu" selected>
+                                        Menunggu
+                                    </option>
+
+                                    <option value="Diproses">
+                                        Diproses
+                                    </option>
+
+                                    <option value="Dicuci">
+                                        Dicuci
+                                    </option>
+
+                                    <option value="Disetrika">
+                                        Disetrika
+                                    </option>
+
+                                    <option value="Selesai">
+                                        Selesai
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="d-flex flex-column flex-sm-row gap-2">
+
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary btn-lg rounded-3 flex-grow-1">
+
+                                    Simpan Pesanan
+
+                                </button>
+
+                                <a
+                                    href="admin-pesanan.html"
+                                    class="btn btn-secondary btn-lg rounded-3">
+
+                                    Batal
+
+                                </a>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="text-center py-4 bg-white">
+
+        <p class="mb-0 text-muted">
+
+            © 2026 LaundryKita —
+            Sistem Pemesanan Laundry
+
+        </p>
+
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <script>
+        const pilihLayanan = document.getElementById("pilihLayanan");
+        const beratLaundry = document.getElementById("beratLaundry");
+        const formPesananBaru = document.getElementById("formPesananBaru");
+        const namaPelanggan = document.getElementById("namaPelanggan");
+        const nomorHp = document.getElementById("nomorHp");
+        const alamatPesanan = document.getElementById("alamatPesanan");
+        const summaryLayanan = document.getElementById("summaryLayanan");
+        const summaryHargaKg = document.getElementById("summaryHargaKg");
+        const summaryBerat = document.getElementById("summaryBerat");
+        const summaryTotal = document.getElementById("summaryTotal");
+
+        function formatRupiah(amount) {
+            return "Rp" + amount.toLocaleString("id-ID");
+        }
+
+        function updateTotal() {
+            const selected = pilihLayanan.options[pilihLayanan.selectedIndex];
+            const pricePerKg = parseInt(selected.dataset.price, 10) || 0;
+            const berat = parseFloat(beratLaundry.value) || 0;
+            const total = Math.round(pricePerKg * berat);
+
+            summaryLayanan.textContent = selected.value;
+            summaryHargaKg.textContent = formatRupiah(pricePerKg);
+            summaryBerat.textContent = berat > 0 ? berat + " Kg" : "0 Kg";
+            summaryTotal.textContent = formatRupiah(total);
+        }
+
+        pilihLayanan.addEventListener("change", updateTotal);
+        beratLaundry.addEventListener("input", updateTotal);
+        beratLaundry.addEventListener("change", updateTotal);
+
+        function clearFieldInvalid(field) {
+            field.classList.remove("is-invalid");
+        }
+
+        namaPelanggan.addEventListener("input", function () {
+            clearFieldInvalid(namaPelanggan);
+        });
+
+        nomorHp.addEventListener("input", function () {
+            clearFieldInvalid(nomorHp);
+        });
+
+        beratLaundry.addEventListener("input", function () {
+            clearFieldInvalid(beratLaundry);
+        });
+
+        alamatPesanan.addEventListener("input", function () {
+            clearFieldInvalid(alamatPesanan);
+        });
+
+        function validateForm() {
+            let valid = true;
+
+            if (!namaPelanggan.value.trim()) {
+                namaPelanggan.classList.add("is-invalid");
+                valid = false;
+            } else {
+                namaPelanggan.classList.remove("is-invalid");
+            }
+
+            if (!nomorHp.value.trim()) {
+                nomorHp.classList.add("is-invalid");
+                valid = false;
+            } else {
+                nomorHp.classList.remove("is-invalid");
+            }
+
+            const berat = parseFloat(beratLaundry.value);
+            if (!berat || berat <= 0) {
+                beratLaundry.classList.add("is-invalid");
+                valid = false;
+            } else {
+                beratLaundry.classList.remove("is-invalid");
+            }
+
+            if (!alamatPesanan.value.trim()) {
+                alamatPesanan.classList.add("is-invalid");
+                valid = false;
+            } else {
+                alamatPesanan.classList.remove("is-invalid");
+            }
+
+            return valid;
+        }
+
+        formPesananBaru.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            if (!validateForm()) {
+                return;
+            }
+
+            window.location.href = "admin-pesanan.html?baru=1";
+        });
+
+        updateTotal();
+    </script>
+
+</body>
+
+</html>
