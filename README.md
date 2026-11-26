@@ -42,7 +42,7 @@ Akun pelanggan dibuat oleh admin. Tidak ada pendaftaran mandiri dari halaman log
 | Bahasa | Java 17 atau lebih baru |
 | Antarmuka | Java Swing, FlatLaf 3.8 |
 | Database | MySQL 8.x, MySQL Connector/J 8.4.0 |
-| Password | jBCrypt 0.4 |
+| Password | ***** |
 | Pemilih tanggal | JCalendar 1.4 |
 | Build | Proyek IntelliJ IDEA, tanpa Maven atau Gradle |
 
