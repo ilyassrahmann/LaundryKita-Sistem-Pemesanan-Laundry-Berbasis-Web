@@ -8,6 +8,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Insets;
 import java.awt.RenderingHints;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
@@ -138,11 +139,15 @@ extends JPanel {
             }
         });
         UiComponents.sizeColumns(this.table, 200, 140, 90, 140);
+        this.table.getColumnModel().getColumn(2).setMaxWidth(100);
         this.table.getColumnModel().getColumn(1).setCellRenderer(UiComponents.rightRenderer());
         this.table.getColumnModel().getColumn(2).setCellRenderer(UiComponents.rightRenderer());
         this.table.getColumnModel().getColumn(3).setCellRenderer(UiComponents.rightRenderer());
         JTextField weightEditor = new JTextField();
         weightEditor.setHorizontalAlignment(JLabel.RIGHT);
+        weightEditor.setFont(UiTheme.BODY);
+        weightEditor.setMargin(new Insets(4, 8, 4, 8));
+        weightEditor.putClientProperty("JComponent.roundRect", Boolean.TRUE);
         this.table.getColumnModel().getColumn(2).setCellEditor(new DefaultCellEditor(weightEditor));
         this.table.setToolTipText("Isi berat untuk layanan yang dipakai, contoh: 2,5");
 

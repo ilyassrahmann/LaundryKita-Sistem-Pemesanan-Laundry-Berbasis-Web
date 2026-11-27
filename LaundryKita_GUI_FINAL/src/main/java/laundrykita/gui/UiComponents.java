@@ -715,7 +715,7 @@ public final class UiComponents {
             super(text);
             setOpaque(false);
             setFont(UiTheme.TINY_BOLD);
-            setBorder(new EmptyBorder(5, 10, 5, 10));
+            setBorder(new EmptyBorder(3, 8, 3, 8));
         }
 
         public void setColors(Color foreground, Color background) {
@@ -881,7 +881,17 @@ public final class UiComponents {
             content.setHorizontalAlignment(alignment);
             setOpaque(true);
             setBorder(new EmptyBorder(0, CELL_PAD, 0, CELL_PAD));
-            add(content, compact ? BorderLayout.WEST : BorderLayout.CENTER);
+            add(compact ? centerVertically(content) : content, BorderLayout.CENTER);
+        }
+
+        private static JPanel centerVertically(JComponent content) {
+            JPanel wrap = new JPanel(new GridBagLayout());
+            wrap.setOpaque(false);
+            GridBagConstraints gbc = new GridBagConstraints();
+            gbc.anchor = GridBagConstraints.WEST;
+            gbc.weightx = 1;
+            wrap.add(content, gbc);
+            return wrap;
         }
 
         int getAlignment() {
